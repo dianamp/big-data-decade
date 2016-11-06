@@ -7,7 +7,8 @@
     <title>reveal.js</title>
 
     <link rel="stylesheet" href="css/reveal.css">
-    <link rel="stylesheet" href="css/theme/black.css">
+    <link rel="stylesheet" href="css/theme/simple.css" id="theme">
+    <link rel="stylesheet" href="diana.css">
 
     <!-- Theme used for syntax highlighting of code -->
     <link rel="stylesheet" href="lib/css/zenburn.css">
@@ -24,8 +25,155 @@
   <body>
     <div class="reveal">
       <div class="slides">
-	<section>Slide 1</section>
-	<section>Slide 2</section>
+	<section>
+	  <h1>The Big Data Makeover</h1>
+	  <h2>How things have changed over the last decade</h2>
+	  <br>
+	  <h3>Diana Pfeil, @dianam</h3>
+	</section>
+
+	<section>
+	  <img class="stretch" style="background:none; border:none; box-shadow:none;" src="images/timeline.png">
+	  <aside class="notes">
+	    EC2: Aug 2006
+	  </aside>
+	</section>
+
+	<section>
+	  <h2>How did we do Big Data?</h2>
+	  <img class="stretch" style="background:none; border:none; box-shadow:none;" src="images/amazon_process.png">
+	  <aside class="notes">
+	    I'll talk about some details later in the talk, but:
+	    Did we roll out own data pipeline and machine learning algorithms?
+	    Yes and No:
+	    Simplified the heck out of the data pipeline (text files, simple data)
+	    Coded machine learning - yes! That's why we were called software engineers.
+	  </aside>
+	</section>
+
+	<section>
+	  <img class="stretch" style="background:none; border:none; box-shadow:none;" src="images/landscape.png">
+	  <aside class="notes">Sure, the landscape is different. But mostly (and I'll talk more about differences near the end of this talk) everyone now has access to Amazon-scale big data. And many of the underlying ways of doing and thinking about big data have remained.
+	  </aside>
+	</section>
+
+	<section>
+	  <iframe src="https://giphy.com/embed/3o7TKOUS22uYK70fp6" width="480" height="315" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="http://giphy.com/gifs/thebachelorau-the-bachelor-3o7TKOUS22uYK70fp6">via GIPHY</a></p>
+	  <!--
+	  <iframe src="https://giphy.com/embed/26tPkp6EgCPNCVBC0" width="480" height="270" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="http://giphy.com/gifs/foxinternational-x-files-scully-mulder-26tPkp6EgCPNCVBC0">via GIPHY</a></p>-->
+	  <aside class="notes">
+	    kafka vs kinesis vs NATS Streaming
+	    AWS vs Azure vs Google Cloud
+	    Recommendations - how should we do it? Scikit-learn or Spark?
+	  </aside>
+	</section>
+
+	<section>
+	  <iframe src="https://giphy.com/embed/l4HnQjvcL4gp6BV04" width="480" height="262" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="http://giphy.com/gifs/season-2-game-of-thrones-episode-6-l4HnQjvcL4gp6BV04">via GIPHY</a></p>
+	</section>
+
+	<section>
+	  <h3>A lot has stayed the same</h3>
+	  <h2 class="fragment">The invariant principles of big data engineering</h2>
+	</section>
+	
+	<section>
+	  <h1>DRY/Open it up</h1>
+	  <h3 class="fragment">When you develop something useful:<br>
+	    make it generic, <br>
+	    <span style="text: italic">communicate it</span> with excellent documentation, and
+	    <br>open it up to all</h3>
+	</section>
+
+	<section>
+	  <h2>Back to the deployment process</h2>
+	  <img class="fragment stretch" style="background:none; border:none; box-shadow:none;" src="images/amazon_fbam.png">
+	  <p class="fragment"> "machine learning": [Item1, Item2, Item3, ...]</p>
+	  <p class="fragment"> service.getValue() </p>
+	  <p class="fragment"> P13nFileBasedMappingService </p>
+	  <aside class="notes">One of my first projects was a key value service...</aside>
+	</section>
+
+	<section>
+	  <iframe src="https://giphy.com/embed/lOaI4MChrDqjC" width="480" height="286" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="http://giphy.com/gifs/90s-clueless-movies-lOaI4MChrDqjC">via GIPHY</a></p>
+	  <aside class="notes"> Scales horizontally. SimpleDB, Dynamo, Cassandra.
+	    </aside>
+	</section>
+	
+	<section>
+	  <h1>Keep It Simple</h1>
+	  <ul>
+	    <li class="fragment">Try the most simple approach that will work</li>
+	    <li class="fragment">Modularize: do one thing well</li>
+	  </ul>
+
+	  <aside class="notes">
+	    For machine learning: non-opaque machine learning algorithms, used unix utilities (biggest challenges were speed and scale),
+	    at a startup, product goes beyond the ML.
+	    <br>
+	    For data pipeline: simple, modular data pipeline (no sharing between teams)
+	  </aside>
+	</section>
+
+	<section>
+	  <h1>Avoid relational databases</h1>
+	  <ul>
+	    <li>administration hassle</li>
+	    <li>complexity</li>
+	    <li>performance </li>
+	  </ul>
+	  <aside class="notes">
+	    Now: data pipelines moving from data warehouse to a data pipeline where everyone has access. Touching DBs is hairy!!
+	  </aside>
+	</section>
+
+	<section>
+	  <h1>Measure Everything</h1>
+	</section>
+
+	<section>
+	  <h2>What has Changed:</h2>
+	  <ul>
+	    <li class="fragment">choice</li>
+	    <li class="fragment">so much literature</li>
+	    <li class="fragment">so much open source</li>
+	    <li class="fragment">open data</li>
+	    <li class="fragment purple" style="color:6633CC">accessibilliy of big data to all</li>
+	    <li class="fragment" style="color:6633CC">data ethics</li>
+	  </ul>
+	  <aside class="notes">
+	    literature: best practises, experiences, machine learning
+	  </aside>
+	</section>
+
+	<section>
+	  <img class="stretch" style="background:none; border:none; box-shadow:none;" src="images/womd_book.jpg">
+	  <aside class="notes">
+	    Think about your impact<br>
+	    Target, prison perform
+	  </aside>
+	</section>
+
+	<section>
+	  Image of the future/robots
+	</section>
+	
+	<section>
+	  <h2>The future</h2>
+	  <ul>
+	    <li class="fragment">Technologies will continue to change at incredible speeds</li>
+	    <li class="fragment">Devops will get easier and cheaper <span class="fragment" style="color:6633CC">because serverless!</span></li>
+	    <li class="fragment">Machine learning will still require domain expertise</li>
+	    <li class="fragment">More data scientists should learn computer science fundamentals</li>
+	  </ul>
+	</section>
+
+	<section>
+	  <img style="border:none; box-shadow:none;" src="images/cat_raising_hand.jpg">
+	  <p>@dianam</p>
+	  <p style="font-size:small;text-align:center">
+	    Source: https://c2.staticflickr.com/2/1162/1415120191_2aef20cb08_b.jpg</p>
+	</section>
       </div>
     </div>
 
