@@ -33,7 +33,7 @@
 	</section>
 
 	<section>
-	  <img class="stretch" style="background:none; border:none; box-shadow:none;" src="images/timeline.png">
+	  <img class="stretch" style="background:none; border:none; box-shadow:none;" data-src="images/timeline.png">
 	  <aside class="notes">
 	    EC2: Aug 2006
 	  </aside>
@@ -41,7 +41,7 @@
 
 	<section>
 	  <h2>How did we do Big Data?</h2>
-	  <img class="stretch" style="background:none; border:none; box-shadow:none;" src="images/amazon_process.png">
+	  <img class="stretch" style="background:none; border:none; box-shadow:none;" data-src="images/amazon_process.png">
 	  <aside class="notes">
 	    I'll talk about some details later in the talk, but:
 	    Did we roll out own data pipeline and machine learning algorithms?
@@ -57,9 +57,9 @@
 	</section>
 
 	<section>
-	  <iframe src="https://giphy.com/embed/3o7TKOUS22uYK70fp6" width="480" height="315" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="http://giphy.com/gifs/thebachelorau-the-bachelor-3o7TKOUS22uYK70fp6">via GIPHY</a></p>
+	  <iframe data-src="https://giphy.com/embed/3o7TKOUS22uYK70fp6" width="480" height="315" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="http://giphy.com/gifs/thebachelorau-the-bachelor-3o7TKOUS22uYK70fp6">via GIPHY</a></p>
 	  <!--
-	  <iframe src="https://giphy.com/embed/26tPkp6EgCPNCVBC0" width="480" height="270" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="http://giphy.com/gifs/foxinternational-x-files-scully-mulder-26tPkp6EgCPNCVBC0">via GIPHY</a></p>-->
+	  <iframe data-src="https://giphy.com/embed/26tPkp6EgCPNCVBC0" width="480" height="270" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="http://giphy.com/gifs/foxinternational-x-files-scully-mulder-26tPkp6EgCPNCVBC0">via GIPHY</a></p>-->
 	  <aside class="notes">
 	    kafka vs kinesis vs NATS Streaming
 	    AWS vs Azure vs Google Cloud
@@ -68,7 +68,7 @@
 	</section>
 
 	<section>
-	  <iframe src="https://giphy.com/embed/l4HnQjvcL4gp6BV04" width="480" height="262" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="http://giphy.com/gifs/season-2-game-of-thrones-episode-6-l4HnQjvcL4gp6BV04">via GIPHY</a></p>
+	  <iframe data-src="https://giphy.com/embed/l4HnQjvcL4gp6BV04" width="480" height="262" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="http://giphy.com/gifs/season-2-game-of-thrones-episode-6-l4HnQjvcL4gp6BV04">via GIPHY</a></p>
 	</section>
 
 	<section>
@@ -92,7 +92,7 @@
 
 	<section>
 	  <h2>Back to the deployment process</h2>
-	  <img class="stretch" src="images/amazon_fbam.png">
+	  <img class="stretch" data-src="images/amazon_fbam.png">
 	  <ul style="list-style: none;">
 	    <li class="fragment"> "machine learning": [Item1, Item2, Item3, ...]</li>
 	    <li class="fragment"> service.getValue() </li>
@@ -102,13 +102,19 @@
 	</section>
 
 	<section>
-	  <iframe src="https://giphy.com/embed/lOaI4MChrDqjC" width="480" height="286" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="http://giphy.com/gifs/90s-clueless-movies-lOaI4MChrDqjC">via GIPHY</a></p>
-	  <aside class="notes"> Scales horizontally. SimpleDB, Dynamo, Cassandra.
+	  <iframe data-src="https://giphy.com/embed/lOaI4MChrDqjC" width="480" height="286" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="http://giphy.com/gifs/90s-clueless-movies-lOaI4MChrDqjC">via GIPHY</a></p>
+	  <aside class="notes"> Scales horizontally. CAP theorem: consistency, availability, partition tolerance => no consistency
 	    </aside>
 	</section>
 
 	<section>
-	  logos for SimpleDB, Dynamo, Cassandra, Redis
+	  <img data-src="images/db_simpledb.jpg">
+	  <img class="fragment" data-src="images/db_dynamo.png">
+	  <img class="fragment" data-src="images/db_cassandra.png">
+	</section>
+
+	<section>
+	  <img class="stretch" data-src="images/advisory.png">
 	</section>
 	
 	<section>
@@ -129,7 +135,7 @@
 	<section>
 	  <h2 class="purple">Avoid relational databases</h2>
 	  <ul class="large" style="list-style: none;">
-	    <li class="fragment">administration hassle</li>
+	    <li class="fragment">administrative hassle</li>
 	    <li class="fragment">complexity</li>
 	    <li class="fragment">performance</li>
 	  </ul>
@@ -144,7 +150,7 @@
 
 	<section>
 	  <h2 class="purple">Measure Everything</h2>
-
+	  <img class="stretch" data-src="images/stopwatch.jpg">
 	  <aside class="notes">
 	    A/B testing. Only build what you need, and measure it. This is huge in startups when you have limited resources.
 	  </aside>
@@ -152,13 +158,13 @@
 
 	<section>
 	  <h2>What has Changed:</h2>
-	  <ul>
+	  <ul class="large" style="list-style: none;">
 	    <li class="fragment">choice</li>
 	    <li class="fragment">so much literature</li>
 	    <li class="fragment">so much open source</li>
-	    <li class="fragment">open data</li>
-	    <li class="fragment purple" style="color:6633CC">accessibilliy of big data to all</li>
-	    <li class="fragment" style="color:6633CC">data ethics</li>
+	    <li class="fragment purple">open data</li>
+	    <li class="fragment purple" style="color:6633CC">accessibility of big data to all</li>
+	    <li class="fragment purple" style="color:6633CC">data ethics</li>
 	  </ul>
 	  <aside class="notes">
 	    literature: best practises, experiences, machine learning
@@ -166,32 +172,50 @@
 	</section>
 
 	<section>
-	  <img class="stretch" style="background:none; border:none; box-shadow:none;" src="images/womd_book.jpg">
+	  <img class="stretch" style="background:none; border:none; box-shadow:none;" data-src="images/womd_book.jpg">
 	  <aside class="notes">
 	    Think about your impact<br>
-	    Target, prison perform
+	    Target: Target started sending her baby ads, when no one knew she was pregnant.<br>
+	    prison perform (sentencing guidelines based on questionaire prisoners fill out. Don't ask explicitly about race and ethnicity; Questions include asking about first run in with police and whether family members have criminal records. Oops! Justice system is about what you did, not who you are.
 	  </aside>
 	</section>
 
 	<section>
-	  Image of the future/robots
+	  <h2>Dangerous Model Territory</h2>
+	  <ul class="large">
+	    <li class="fragment"><span class="purple">scale:</span> significant impact on everyone's lives</li>
+	    <li class="fragment"><span class="purple">unfair:</span> illegal or unjust factors used in decision-making</li>
+	    <li class="fragment"><span class="purple">opaque:</span> model is not open or reviewable by those affected</li>
+	    <li class="fragment"><span class="purple">no feedback loop:</span> model does not course-correct</li>
+	  </ul>
+	  <aside class="notes">
+	    From http://money.cnn.com/2016/09/06/technology/weapons-of-math-destruction/<br>
+	    scale: denied job at walmart after failing a personality test? Good luck going to 
+	    Denied a job because of a personality test? Too bad -- the algorithm said you wouldn't be a good fit.<br>
+	    Charged a higher rate for a loan? Well, people in your zip code tend to be riskier borrowers.<br>
+	    Received a harsher prison sentence? Here's the thing: Your friends and family have criminal records too, so you're likely to be a repeat offender. <br>
+	    Fired from your teaching job because students test scores didn't increase enough, although everyone says you're a great teacher? The model won't improve 
+	  </aside>
+	</section>
+
+	<section>
+	  <iframe data-src="https://giphy.com/embed/l41lFj8afmWIo3yW4" width="480" height="480" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="http://giphy.com/gifs/bose-lemonade-listening-render-fruit-l41lFj8afmWIo3yW4">via GIPHY</a></p>
 	</section>
 	
 	<section>
-	  <h2>The future</h2>
-	  <ul>
+	  <h2 class="purple">The future</h2>
+	  <ul class="large">
 	    <li class="fragment">Technologies will continue to change at incredible speeds</li>
-	    <li class="fragment">Devops will get easier and cheaper <span class="fragment" style="color:6633CC">because serverless!</span></li>
+	    <li class="fragment">Devops will get easier and cheaper <span class="fragment purple">because serverless!</span></li>
 	    <li class="fragment">Machine learning will still require domain expertise</li>
 	    <li class="fragment">More data scientists should learn computer science fundamentals</li>
 	  </ul>
 	</section>
 
 	<section>
-	  <img style="border:none; box-shadow:none;" src="images/cat_raising_hand.jpg">
-	  <p>@dianam</p>
-	  <p style="font-size:small;text-align:center">
-	    Source: https://c2.staticflickr.com/2/1162/1415120191_2aef20cb08_b.jpg</p>
+	  <h1>Questions?</h1>
+	  <br>
+	  <p class="large purple; align:right">@dianam</p>
 	</section>
       </div>
     </div>
