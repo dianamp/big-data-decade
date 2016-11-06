@@ -51,8 +51,7 @@
 	  </aside>
 	</section>
 
-	<section>
-	  <img class="stretch" style="background:none; border:none; box-shadow:none;" src="images/landscape.png">
+	<section data-background="images/landscape.png">
 	  <aside class="notes">Sure, the landscape is different. But mostly (and I'll talk more about differences near the end of this talk) everyone now has access to Amazon-scale big data. And many of the underlying ways of doing and thinking about big data have remained.
 	  </aside>
 	</section>
@@ -73,24 +72,32 @@
 	</section>
 
 	<section>
-	  <h3>A lot has stayed the same</h3>
-	  <h2 class="fragment">The invariant principles of big data engineering</h2>
+	  <h2 class="purple">The invariant principles of big data engineering</h2>
+	  <aside class="notes">
+	    A lot has stayed the same
+	  </aside>
 	</section>
 	
 	<section>
-	  <h1>DRY/Open it up</h1>
-	  <h3 class="fragment">When you develop something useful:<br>
-	    make it generic, <br>
-	    <span style="text: italic">communicate it</span> with excellent documentation, and
-	    <br>open it up to all</h3>
+	  <h2 class="purple">DRY/Open it up</h2>
+	    <ul class="large" style="list-style: none;">
+	      <li class="fragment">make it generic</li>
+	      <li class="fragment">communicate it with excellent documentation</li>
+	      <li class="fragment">open it up to all</li>
+	    </ul>
+	  <aside class="notes">
+	    When you develop something useful...
+	  </aside>
 	</section>
 
 	<section>
 	  <h2>Back to the deployment process</h2>
-	  <img class="fragment stretch" style="background:none; border:none; box-shadow:none;" src="images/amazon_fbam.png">
-	  <p class="fragment"> "machine learning": [Item1, Item2, Item3, ...]</p>
-	  <p class="fragment"> service.getValue() </p>
-	  <p class="fragment"> P13nFileBasedMappingService </p>
+	  <img class="stretch" src="images/amazon_fbam.png">
+	  <ul style="list-style: none;">
+	    <li class="fragment"> "machine learning": [Item1, Item2, Item3, ...]</li>
+	    <li class="fragment"> service.getValue() </li>
+	    <li class="fragment"> P13nFileBasedMappingService </li>
+	  </ul>
 	  <aside class="notes">One of my first projects was a key value service...</aside>
 	</section>
 
@@ -99,10 +106,14 @@
 	  <aside class="notes"> Scales horizontally. SimpleDB, Dynamo, Cassandra.
 	    </aside>
 	</section>
+
+	<section>
+	  logos for SimpleDB, Dynamo, Cassandra, Redis
+	</section>
 	
 	<section>
-	  <h1>Keep It Simple</h1>
-	  <ul>
+	  <h2 class="purple">Keep It Simple</h2>
+	  <ul class="large" style="list-style: none;">
 	    <li class="fragment">Try the most simple approach that will work</li>
 	    <li class="fragment">Modularize: do one thing well</li>
 	  </ul>
@@ -116,19 +127,27 @@
 	</section>
 
 	<section>
-	  <h1>Avoid relational databases</h1>
-	  <ul>
-	    <li>administration hassle</li>
-	    <li>complexity</li>
-	    <li>performance </li>
+	  <h2 class="purple">Avoid relational databases</h2>
+	  <ul class="large" style="list-style: none;">
+	    <li class="fragment">administration hassle</li>
+	    <li class="fragment">complexity</li>
+	    <li class="fragment">performance</li>
 	  </ul>
 	  <aside class="notes">
 	    Now: data pipelines moving from data warehouse to a data pipeline where everyone has access. Touching DBs is hairy!!
+	    <br>
+	    key value stores: simple data moodel,
+	    very fast,
+	    horizontally scalable => can handle massive concurrent load
 	  </aside>
 	</section>
 
 	<section>
-	  <h1>Measure Everything</h1>
+	  <h2 class="purple">Measure Everything</h2>
+
+	  <aside class="notes">
+	    A/B testing. Only build what you need, and measure it. This is huge in startups when you have limited resources.
+	  </aside>
 	</section>
 
 	<section>
