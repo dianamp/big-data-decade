@@ -38,9 +38,10 @@
 		config = {
 
 			// The "normal" size of the presentation, aspect ratio will be preserved
-			// when the presentation is scaled to fit different resolutions
-			width: 960,
-			height: 700,
+		    // when the presentation is scaled to fit different resolutions
+		    //presentation aspect ration is 16:9
+			width: 1280,
+			height: 720,
 
 			// Factor of the display size that should remain empty around the content
 			margin: 0.1,
@@ -50,7 +51,7 @@
 			maxScale: 1.5,
 
 			// Display controls in the bottom right corner
-			controls: true,
+			controls: false,
 
 			// Display a presentation progress bar
 			progress: true,

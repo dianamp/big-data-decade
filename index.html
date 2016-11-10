@@ -34,9 +34,9 @@
 	
 	<section>
 	  <div style="position: relative; width: 1072px; height: 512px;">
-	    <img src="images/timeline1.png" alt="" style="position: absolute; top: 0; left: 0;">
-	    <img class="fragment" src="images/timeline2.png" alt="" style="position: absolute; top: 0; left: 0;">
-	    <img class="fragment" src="images/timeline3.png" alt="" style="position: absolute; top: 0; left: 0;">
+	    <img src="images/timeline1.png" alt="" style="position: absolute; top: 10%; left: 10%;">
+	    <img class="fragment" src="images/timeline2.png" alt="" style="position: absolute; top: 10%; left: 10%;">
+	    <img class="fragment" src="images/timeline3.png" alt="" style="position: absolute; top: 10%; left: 10%;">
 	  </div>
 	  <aside class="notes">
 	    EC2: Aug 2006
@@ -46,10 +46,13 @@
 	<section>
 	  <h2>Big Data 10 years ago</h2>
 	  <div style="position: relative; width: 1072px; height: 512px;">
-	    <img src="images/amazon_process1.png" alt="" style="position: absolute; top: 0; left: 0;">
-	    <img class="fragment" src="images/amazon_process2.png" alt="" style="position: absolute; top: 0; left: 0;">
-	    <img class="fragment" src="images/amazon_process3.png" alt="" style="position: absolute; top: 0; left: 0;">
+	    <img src="images/amazon_process1.png" alt="" style="position: absolute; top: 10%; left: 10%;">
+	    <img class="fragment" src="images/amazon_process2.png" alt="" style="position: absolute; top: 10%; left: 10%;">
+	    <img class="fragment" src="images/amazon_process3.png" alt="" style="position: absolute; top: 10%; left: 10%;">
 	  </div>
+	  <div class="footer">
+           <p>@dianam</p>
+         </div>
 	  
 	  <aside class="notes">
 	    I'll talk about some details later in the talk, but:
@@ -61,7 +64,7 @@
 	</section>
 
 	<section>
-	  <img data-src="images/landscape.png">
+	  <img class="stretch" data-src="images/landscape.png">
 	  <aside class="notes">Sure, the landscape is different. But mostly (and I'll talk more about differences near the end of this talk) everyone now has access to Amazon-scale big data. And many of the underlying ways of doing and thinking about big data have remained.
 	  </aside>
 	</section>
@@ -104,10 +107,10 @@
 	<section>
 	  <h2>Back to the deployment process</h2>
 	  <div style="position: relative; width: 900px; height: 301px;">
-	    <img src="images/amazon_process4.png" alt="" style="position: absolute; top: 0; left: 0;">
-	    <img class="fragment" src="images/amazon_process5.png" alt="" style="position: absolute; top: 0; left: 0;">
+	    <img src="images/amazon_process4.png" alt="" style="position: absolute; top: 10%; left: 10%;">
+	    <img class="fragment" src="images/amazon_process5.png" alt="" style="position: absolute; top: 10%; left: 10%;">
 	  </div>
-	  <ul style="list-style: none;">
+	  <ul style="position: relative; list-style: none;">
 	    <li class="fragment"> "machine learning": [Item1, Item2, Item3, ...]</li>
 	    <li class="fragment"> service.getValue() </li>
 	    <li class="fragment"> P13nFileBasedMappingService </li>
@@ -173,15 +176,19 @@
 
 	<section>
 	  <h2 class="purple">Just add a server</h2>
-	  <img style="height: 1000px; width: auto" data-src="images/moores_law.png"> <!--chip.jpg">-->
+	  <img style="height: 550px; width: auto" class="strech" data-src="images/chip.jpg">
 	  <aside class="notes">
 	    Compute speed has increased (double every 18 months until ~2012), but big data has been about parrellization. Good since Moore's law has switched to multicore processors and parallelism.
 	  </aside>
 	</section>
 
 	<section>
+	  <img style="height: 700px; width: auto" data-src="images/moores_law.png"> <!--chip.jpg">-->
+	</section>
+
+	<section>
 	  <h2 class="purple">Measure Everything</h2>
-	  <img data-src="images/measure.jpg">
+	  <img class="stretch" data-src="images/measure.jpg">
 	  <aside class="notes">
 	    A/B testing. Only build what you need, and measure it. This is huge in startups when you have limited resources.
 	  </aside>
@@ -203,7 +210,7 @@
 	</section>
 
 	<section>
-	  <img data-src="images/womd_book.jpg">
+	  <img class="stretch" data-src="images/womd_book.jpg">
 	  <aside class="notes">
 	    Think about your impact<br>
 	    Target: Target started sending her baby ads, when no one knew she was pregnant.<br>
@@ -217,7 +224,7 @@
 
 	<section>
 	  <h2>Models for sentencing</h2>
-	  <img data-src="images/ethics_jail.jpg">
+	  <img  style="height: 600px; width: auto" data-src="images/ethics_jail.jpg">
 	</section>
 
 	<section>
@@ -266,22 +273,22 @@
 
 	<section>
 	  <p><span class="purple large"> scale:</span> significant impact on everyone's lives</p>
-	  <img data-src="images/ethics_scale.jpg">
+	  <img  style="height: 600px; width: auto" data-src="images/ethics_scale.jpg">
 	</section>
 
 	<section>
 	  <p><span class="purple large"> unfair:</span> illegal or unjust factors used in decision-making</p>
-	  <img data-src="images/ethics_loan.jpg">
+	  <img style="height: 600px; width: auto" data-src="images/ethics_loan.jpg">
 	</section>
 
 	<section>
 	  <p><span class="purple large"> opaque:</span> model is not open or reviewable by those affected</p>
-	  <img data-src="images/ethics_opaque.jpg">
+	  <img style="height: 600px; width: auto" data-src="images/ethics_opaque.jpg">
 	</section>
 
 	<section>
 	  <p><span class="purple large"> no feedback loop:</span> model does not course-correct</p>
-	  <img data-src="images/ethics_loop.jpg">
+	  <img style="height: 600px; width: auto" data-src="images/ethics_loop.jpg">
 	</section>
 
 	<section>
