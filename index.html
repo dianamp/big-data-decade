@@ -51,7 +51,6 @@
 	    <img class="fragment" src="images/amazon_process3.png" alt="" style="position: absolute; top: 0; left: 0;">
 	  </div>
 	  
-	  <!--<img class="stretch" style="background:none; border:none; box-shadow:none;" data-src="images/amazon_process.png">-->
 	  <aside class="notes">
 	    I'll talk about some details later in the talk, but:
 	    Did we roll out own data pipeline and machine learning algorithms?
@@ -61,7 +60,8 @@
 	  </aside>
 	</section>
 
-	<section data-background="images/landscape.png">
+	<section>
+	  <img data-src="images/landscape.png">
 	  <aside class="notes">Sure, the landscape is different. But mostly (and I'll talk more about differences near the end of this talk) everyone now has access to Amazon-scale big data. And many of the underlying ways of doing and thinking about big data have remained.
 	  </aside>
 	</section>
@@ -103,7 +103,10 @@
 
 	<section>
 	  <h2>Back to the deployment process</h2>
-	  <img class="stretch" data-src="images/amazon_fbam.png">
+	  <div style="position: relative; width: 900px; height: 301px;">
+	    <img src="images/amazon_process4.png" alt="" style="position: absolute; top: 0; left: 0;">
+	    <img class="fragment" src="images/amazon_process5.png" alt="" style="position: absolute; top: 0; left: 0;">
+	  </div>
 	  <ul style="list-style: none;">
 	    <li class="fragment"> "machine learning": [Item1, Item2, Item3, ...]</li>
 	    <li class="fragment"> service.getValue() </li>
@@ -124,8 +127,17 @@
 	  <img class="fragment" data-src="images/db_cassandra.png">
 	</section>
 
-	<section data-background="images/advisory.png">
-<!--	  <img class="stretch" data-src="images/advisory.png">-->
+	<section>
+	  <img data-src="images/opendatagov.png">
+	</section>
+
+	<section>
+	  <img data-src="images/iquantny_hydrant.jpg">
+	  <p style="font-size:small">Source: http://iquantny.tumblr.com/post/83696310037/meet-the-fire-hydrant-that-unfairly-nets-nyc</p>
+	</section>
+
+	<section>
+	  <img  data-src="images/opsplan.png">
 	</section>
 	
 	<section>
@@ -160,8 +172,16 @@
 	</section>
 
 	<section>
+	  <h2 class="purple">Just add a server</h2>
+	  <img style="height: 1000px; width: auto" data-src="images/moores_law.png"> <!--chip.jpg">-->
+	  <aside class="notes">
+	    Compute speed has increased (double every 18 months until ~2012), but big data has been about parrellization. Good since Moore's law has switched to multicore processors and parallelism.
+	  </aside>
+	</section>
+
+	<section>
 	  <h2 class="purple">Measure Everything</h2>
-	  <img class="stretch" data-src="images/stopwatch.jpg">
+	  <img data-src="images/measure.jpg">
 	  <aside class="notes">
 	    A/B testing. Only build what you need, and measure it. This is huge in startups when you have limited resources.
 	  </aside>
@@ -183,7 +203,7 @@
 	</section>
 
 	<section>
-	  <img class="stretch" style="background:none; border:none; box-shadow:none;" data-src="images/womd_book.jpg">
+	  <img data-src="images/womd_book.jpg">
 	  <aside class="notes">
 	    Think about your impact<br>
 	    Target: Target started sending her baby ads, when no one knew she was pregnant.<br>
@@ -192,13 +212,48 @@
 	</section>
 
 	<section>
-	  <h2>Dangerous Model Territory</h2>
-	  <ul class="large">
-	    <li class="fragment"><span class="purple">scale:</span> significant impact on everyone's lives</li>
+	  <img data-src="images/ethics_target.png">
+	</section>
+
+	<section>
+	  <h2>Models for sentencing</h2>
+	  <img data-src="images/ethics_jail.jpg">
+	</section>
+
+	<section>
+	  <h2 class="purple">Failure modes for Northpointe recidivism model</h2>
+	  <table class="large">
+	    <thead>
+	      <tr>
+		<th></th>
+		<th>white</th>
+		<th>african-america</th>
+	      </tr>
+	    </thead>
+	    <tbody>
+	      <tr>
+		<td>Labeled high risk, did not re-offend</td>
+		<td>23%</td>
+		<td>45%</td>
+	      </tr>
+	      <tr>
+		<td>Labeled low risk, did re-offend</td>
+		<td>48%</td>
+		<td>28%</td>
+	      </tr>
+	    </tbody>
+	  </table>
+	  <p style="font-size: small">Source: https://www.propublica.org/article/machine-bias-risk-assessments-in-criminal-sentencing</p>
+	</section>
+
+	<section>
+	  <h1>Dangerous Model Territory</h1>
+<!--	  <ul class="large">
+	    <li class="fragment"><span class="purple">
 	    <li class="fragment"><span class="purple">unfair:</span> illegal or unjust factors used in decision-making</li>
 	    <li class="fragment"><span class="purple">opaque:</span> model is not open or reviewable by those affected</li>
 	    <li class="fragment"><span class="purple">no feedback loop:</span> model does not course-correct</li>
-	  </ul>
+	  </ul>-->
 	  <aside class="notes">
 	    From http://money.cnn.com/2016/09/06/technology/weapons-of-math-destruction/<br>
 	    scale: denied job at walmart after failing a personality test? Good luck going to 
@@ -207,6 +262,26 @@
 	    Received a harsher prison sentence? Here's the thing: Your friends and family have criminal records too, so you're likely to be a repeat offender. <br>
 	    Fired from your teaching job because students test scores didn't increase enough, although everyone says you're a great teacher? The model won't improve 
 	  </aside>
+	</section>
+
+	<section>
+	  <p><span class="purple large"> scale:</span> significant impact on everyone's lives</p>
+	  <img data-src="images/ethics_scale.jpg">
+	</section>
+
+	<section>
+	  <p><span class="purple large"> unfair:</span> illegal or unjust factors used in decision-making</p>
+	  <img data-src="images/ethics_loan.jpg">
+	</section>
+
+	<section>
+	  <p><span class="purple large"> opaque:</span> model is not open or reviewable by those affected</p>
+	  <img data-src="images/ethics_opaque.jpg">
+	</section>
+
+	<section>
+	  <p><span class="purple large"> no feedback loop:</span> model does not course-correct</p>
+	  <img data-src="images/ethics_loop.jpg">
 	</section>
 
 	<section>
@@ -237,6 +312,7 @@
       // More info https://github.com/hakimel/reveal.js#configuration
       Reveal.initialize({
       history: true,
+
 
       // More info https://github.com/hakimel/reveal.js#dependencies
       dependencies: [
