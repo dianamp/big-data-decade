@@ -26,200 +26,48 @@
     <div class="reveal">
       <div class="slides">
 	<section>
-	  <h1>The Big Data Makeover</h1>
-	  <h2>How things have changed over the last decade</h2>
+	  <h1>Data Ethics</h1>
+	  <h2>But what could go wrong?</h2>
 	  <br>
 	  <h3>Diana Pfeil, @dianam</h3>
 	</section>
-	
-	<section>
-	  <div style="position: relative; width: 1072px; height: 512px;">
-	    <img src="images/timeline1.png" alt="" style="position: absolute; top: 10%; left: 10%;">
-	    <img class="fragment" src="images/timeline2.png" alt="" style="position: absolute; top: 10%; left: 10%;">
-	    <img class="fragment" src="images/timeline3.png" alt="" style="position: absolute; top: 10%; left: 10%;">
-	  </div>
-	  <aside class="notes">
-	    EC2: Aug 2006
-	  </aside>
-	</section>
+
+	<!--
+	    Abstract: Businesses are increasingly using data in sophisticated ways, and our lives are increasingly shaped by the outcome of these data-based algorithms. Our credit score, the ads we see, and how long we're sentenced to prison are all biproducts. This talk focuses on data ethics: how can you tell if your model or algorithm is entering destructive or unethical territory? You will walk away with a better understanding of how to think about these issues.
+	 -->
 
 	<section>
-	  <h2>Big Data 10 years ago</h2>
-	  <div style="position: relative; width: 1072px; height: 512px;">
-	    <img src="images/amazon_process1.png" alt="" style="position: absolute; top: 10%; left: 10%;">
-	    <img class="fragment" src="images/amazon_process2.png" alt="" style="position: absolute; top: 10%; left: 10%;">
-	    <img class="fragment" src="images/amazon_process3.png" alt="" style="position: absolute; top: 10%; left: 10%;">
-	  </div>
-	  <div class="footer">
-           <p>@dianam</p>
-         </div>
-	  
+	  <img data-src="images/ethics_target.png">
 	  <aside class="notes">
-	    I'll talk about some details later in the talk, but:
-	    Did we roll out own data pipeline and machine learning algorithms?
-	    Yes and No:
-	    Simplified the heck out of the data pipeline (text files, simple data)
-	    Coded machine learning - yes! That's why we were called software engineers.
-	  </aside>
-	</section>
-
-	<section>
-	  <img class="stretch" data-src="images/landscape.png">
-	  <aside class="notes">Sure, the landscape is different. But mostly (and I'll talk more about differences near the end of this talk) everyone now has access to Amazon-scale big data. And many of the underlying ways of doing and thinking about big data have remained.
-	  </aside>
-	</section>
-
-	<section>
-	  <h2>Choices, choices</h2>
-	  <iframe data-src="https://giphy.com/embed/3o7TKOUS22uYK70fp6" style="top: 0px;" width="720" height="473" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="http://giphy.com/gifs/thebachelorau-the-bachelor-3o7TKOUS22uYK70fp6"><span style="font-size:medium;">via GIPHY</span></a></p>
-	  <!--
-	  <iframe data-src="https://giphy.com/embed/26tPkp6EgCPNCVBC0" width="480" height="270" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="http://giphy.com/gifs/foxinternational-x-files-scully-mulder-26tPkp6EgCPNCVBC0">via GIPHY</a></p>-->
-	  <aside class="notes">
-	    kafka vs kinesis vs NATS Streaming
-	    AWS vs Azure vs Google Cloud
-	    Recommendations - how should we do it? Scikit-learn or Spark?
-	  </aside>
-	</section>
-<!--
-	<section>
-	  <iframe data-src="https://giphy.com/embed/l4HnQjvcL4gp6BV04" width="480" height="262" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="http://giphy.com/gifs/season-2-game-of-thrones-episode-6-l4HnQjvcL4gp6BV04">via GIPHY</a></p>
-	</section>-->
-
-	<section>
-	  <h2 class="purple">The invariant principles of big data engineering</h2>
-	  <aside class="notes">
-	    A lot has stayed the same
+	    Remember when this happened?<br>
+	    Target: Target started sending a teen mom-to-be baby ads, when no one knew she was pregnant, not even her father. The intent was innocent: if someone shops for a lot of video games, let's recommend others! If something shops for lots of pregnancy tests followed by pounds and poungs of ginger....oops...<br>
 	  </aside>
 	</section>
 	
 	<section>
-	  <h2 class="purple">DRY/Open it up</h2>
-	    <ul class="large" style="list-style: none;">
-	      <li class="fragment">make it generic</li>
-	      <li class="fragment">communicate it with excellent documentation</li>
-	      <li class="fragment">open it up to all</li>
-	    </ul>
-	  <aside class="notes">
-	    When you develop something useful...
+	  <img  style="height: 700px; width: auto" data-src="images/landscape.png">
+	  <aside class="notes">Big data is a huge industry. So is regular-size data! More and more business are doing something with data. 
 	  </aside>
 	</section>
 
 	<section>
-	  <h2>Back to the deployment process</h2>
-	  <div style="position: relative; width: 900px; height: 301px;">
-	    <img src="images/amazon_process4.png" alt="" style="position: absolute; top: 10%; left: 10%;">
-	    <img class="fragment" src="images/amazon_process5.png" alt="" style="position: absolute; top: 10%; left: 10%;">
-	  </div>
-	  <ul style="position: relative; list-style: none;">
-	    <li class="fragment"> "machine learning": [Item1, Item2, Item3, ...]</li>
-	    <li class="fragment"> service.getValue() </li>
-	    <li class="fragment"> P13nFileBasedMappingService </li>
-	  </ul>
-	  <aside class="notes">One of my first projects was a key value service...</aside>
-	</section>
-
-	<section>
-	  <iframe data-src="https://giphy.com/embed/lOaI4MChrDqjC" width="720" height="429" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a style="font-size: medium;" href="http://giphy.com/gifs/90s-clueless-movies-lOaI4MChrDqjC">via GIPHY</a></p>
-	  <aside class="notes"> Scales horizontally. CAP theorem: consistency, availability, partition tolerance => no consistency
-	    </aside>
-	</section>
-
-	<section>
-	  <img style="padding-right: 50px" data-src="images/db_simpledb.jpg">
-	  <img style="padding-right: 50px" class="fragment" data-src="images/db_dynamo.png">
-	  <img class="fragment" data-src="images/db_cassandra.png">
-	</section>
-
-	<section>
-	  <img data-src="images/opendatagov.png">
-	</section>
-
-	<section>
-	  <img data-src="images/iquantny_hydrant.jpg">
-	  <p style="font-size:small">Source: http://iquantny.tumblr.com/post/83696310037/meet-the-fire-hydrant-that-unfairly-nets-nyc</p>
-	</section>
-
-	<section>
-	  <img  data-src="images/opsplan.png">
-	</section>
-	
-	<section>
-	  <h2 class="purple">Keep It Simple</h2>
-	  <ul class="large" style="list-style: none;">
-	    <li class="fragment">Try the most simple approach that will work</li>
-	    <li class="fragment">Modularize: do one thing well</li>
-	  </ul>
-
+	  <h2>Let's not be ignorant</h2>
+	  <!--TODO: image -->
 	  <aside class="notes">
-	    For machine learning: non-opaque machine learning algorithms, used unix utilities (biggest challenges were speed and scale),
-	    at a startup, product goes beyond the ML.
-	    <br>
-	    For data pipeline: simple, modular data pipeline (no sharing between teams)
+	    Want to talk about something I've become increasingly passionate about - how to think about data ethics.
 	  </aside>
 	</section>
 
 	<section>
-	  <h2 class="purple">Avoid relational databases</h2>
-	  <ul class="large" style="list-style: none;">
-	    <li class="fragment">administrative hassle</li>
-	    <li class="fragment">complexity</li>
-	    <li class="fragment">performance</li>
-	  </ul>
-	  <aside class="notes">
-	    Now: data pipelines moving from data warehouse to a data pipeline where everyone has access. Touching DBs is hairy!!
-	    <br>
-	    key value stores: simple data moodel,
-	    very fast,
-	    horizontally scalable => can handle massive concurrent load
-	  </aside>
-	</section>
-
-	<section>
-	  <h2 class="purple">Just add a server</h2>
-	  <img style="height: 550px; width: auto" class="strech" data-src="images/chip.jpg">
-	  <aside class="notes">
-	    Compute speed has increased (double every 18 months until ~2012), but big data has been about parrellization. Good since Moore's law has switched to multicore processors and parallelism.
-	  </aside>
-	</section>
-
-	<section>
-	  <img style="height: 700px; width: auto" data-src="images/moores_law.png"> <!--chip.jpg">-->
-	</section>
-
-	<section>
-	  <h2 class="purple">Measure Everything</h2>
-	  <img class="stretch" data-src="images/measure.jpg">
-	  <aside class="notes">
-	    A/B testing. Only build what you need, and measure it. This is huge in startups when you have limited resources.
-	  </aside>
-	</section>
-
-	<section>
-	  <h2>What has Changed</h2>
-	  <ul class="large" style="list-style: none;">
-	    <li class="fragment">choice</li>
-	    <li class="fragment">so much literature</li>
-	    <li class="fragment">so much open source</li>
-	    <li class="fragment purple">open data</li>
-	    <li class="fragment purple" style="color:6633CC">accessibility of big data to all</li>
-	    <li class="fragment purple" style="color:6633CC">data ethics</li>
-	  </ul>
-	  <aside class="notes">
-	    literature: best practises, experiences, machine learning
-	  </aside>
+	  <!--About me: TODO: image -->
 	</section>
 
 	<section>
 	  <img class="stretch" data-src="images/womd_book.jpg">
 	  <aside class="notes">
-	    Think about your impact<br>
-	    Target: Target started sending her baby ads, when no one knew she was pregnant.<br>
+	    Think about your impact<br>   
 	    prison perform (sentencing guidelines based on questionaire prisoners fill out. Don't ask explicitly about race and ethnicity; Questions include asking about first run in with police and whether family members have criminal records. Oops! Justice system is about what you did, not who you are.
 	  </aside>
-	</section>
-
-	<section>
-	  <img data-src="images/ethics_target.png">
 	</section>
 
 	<section>
@@ -267,27 +115,30 @@
 	    Denied a job because of a personality test? Too bad -- the algorithm said you wouldn't be a good fit.<br>
 	    Charged a higher rate for a loan? Well, people in your zip code tend to be riskier borrowers.<br>
 	    Received a harsher prison sentence? Here's the thing: Your friends and family have criminal records too, so you're likely to be a repeat offender. <br>
-	    Fired from your teaching job because students test scores didn't increase enough, although everyone says you're a great teacher? The model won't improve 
+	    Fired from your teaching job because students test scores didn't increase enough, although everyone says you're a great teacher? The model won't improve <br>
+Quote from Cathy O'Niel: A weapon of math destruction is an algorithm that is important but secret at the same time, and also destroys people’s lives. It’s being used for important decisions, and it’s being used unfairly so that people’s lives get ruined, or at least they get injured.
+
+An example that really got my attention early on was the teacher value-added model. You had teachers whose jobs were on the line through secret teacher assessments that no one could explain to them and that were statistically flawed, so the scores were inconsistent. I found a teacher who scored a six out of 100 one year, and a 96 out of 100 the next year, without changing his methodology of teaching. When teachers tried to appeal their scores, they were told the scores were too mathematically complicated for them to understand. They were told, “You’re not expert enough to question this.”
 	  </aside>
 	</section>
 
 	<section>
-	  <p><span class="purple large"> scale:</span> significant impact on everyone's lives</p>
+	  <p><span class="purple large">scale:</span> significant impact on everyone's lives</p>
 	  <img  style="height: 600px; width: auto" data-src="images/ethics_scale.jpg">
 	</section>
 
 	<section>
-	  <p><span class="purple large"> unfair:</span> illegal or unjust factors used in decision-making</p>
+	  <p><span class="purple large">unfair:</span> illegal or unjust factors used in decision-making</p>
 	  <img style="height: 600px; width: auto" data-src="images/ethics_loan.jpg">
 	</section>
 
 	<section>
-	  <p><span class="purple large"> opaque:</span> model is not open or reviewable by those affected</p>
+	  <p><span class="purple large">opaque:</span> model is not open or reviewable by those affected</p>
 	  <img style="height: 600px; width: auto" data-src="images/ethics_opaque.jpg">
 	</section>
 
 	<section>
-	  <p><span class="purple large"> no feedback loop:</span> model does not course-correct</p>
+	  <p><span class="purple large">no feedback loop:</span> model does not course-correct</p>
 	  <img style="height: 600px; width: auto" data-src="images/ethics_loop.jpg">
 	</section>
 
@@ -296,16 +147,7 @@
 	</section>
 	
 	<section>
-	  <h2 class="purple">The future</h2>
-	  <ul class="large">
-	    <li class="fragment">Technologies will continue to evolve at incredible speeds</li>
-	    <li class="fragment">Devops will get easier and cheaper <span class="fragment purple">because serverless!</span></li>
-	    <li class="fragment">Machine learning will still require thinking and domain expertise</li>
-	  </ul>
-	</section>
-
-	<section>
-	  <h1>Questions?</h1>
+	  <!-- TODO: add image of cat raising her hand -->
 	  <br>
 	  <p class="large purple; align:right">@dianam</p>
 	</section>
